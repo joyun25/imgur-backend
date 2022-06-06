@@ -40,7 +40,7 @@ const posts = {
   updatePosts: handleResponse.errorAsync(async (req, res, next) => {
     const body = req.body;
     const name = req.body.name;
-    const content = req.body.name;
+    const content = req.body.content;
     const id = req.params.id;
     if (await Post.findById(`${id}`) !== null){
       if(content){
