@@ -1,0 +1,412 @@
+{
+	"info": {
+		"_postman_id": "8a0088b2-5145-41bc-a446-b2a8488f3530",
+		"name": "imgur-backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20217855"
+	},
+	"item": [
+		{
+			"name": "新增單筆貼文資料",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user\": \"629207680f4d2a3f42d765ac\",\n    \"content\": \"測試關聯資料\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://obscure-atoll-16302.herokuapp.com/posts",
+					"protocol": "https",
+					"host": [
+						"obscure-atoll-16302",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "讀取所有貼文資料",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://obscure-atoll-16302.herokuapp.com/posts",
+					"protocol": "https",
+					"host": [
+						"obscure-atoll-16302",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "由舊到新讀取所有貼文資料",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://obscure-atoll-16302.herokuapp.com/posts?timeSort=asc",
+					"protocol": "https",
+					"host": [
+						"obscure-atoll-16302",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"posts"
+					],
+					"query": [
+						{
+							"key": "timeSort",
+							"value": "asc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "由舊到新讀取有2關鍵字的貼文資料",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://obscure-atoll-16302.herokuapp.com/posts?timeSort=asc&q=2",
+					"protocol": "https",
+					"host": [
+						"obscure-atoll-16302",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"posts"
+					],
+					"query": [
+						{
+							"key": "timeSort",
+							"value": "asc"
+						},
+						{
+							"key": "q",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "刪除全部貼文資料",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://obscure-atoll-16302.herokuapp.com/posts",
+					"protocol": "https",
+					"host": [
+						"obscure-atoll-16302",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "刪除單筆貼文資料",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://obscure-atoll-16302.herokuapp.com/posts/629e23709084a978dc043307",
+					"protocol": "https",
+					"host": [
+						"obscure-atoll-16302",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"posts",
+						"629e23709084a978dc043307"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "編輯單筆貼文資料",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"小花\",\n    \"content\": \"測試關聯資料123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://obscure-atoll-16302.herokuapp.com/posts/629e23709084a978dc043307",
+					"protocol": "https",
+					"host": [
+						"obscure-atoll-16302",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"posts",
+						"629e23709084a978dc043307"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "使用者註冊",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"QQ\",\n    \"email\": \"abc456@gmail.com\",\n    \"password\": \"1234qwer\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://obscure-atoll-16302.herokuapp.com/users/sign_up",
+					"protocol": "https",
+					"host": [
+						"obscure-atoll-16302",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"users",
+						"sign_up"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "使用者登入",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"abc@gmail.com\",\n    \"password\": \"1234qwer\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://obscure-atoll-16302.herokuapp.com/users/sign_in",
+					"protocol": "https",
+					"host": [
+						"obscure-atoll-16302",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"users",
+						"sign_in"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "讀取所有使用者資料",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyOWM0YzFjYmZmZjZiMTY5ZmQyZDM4OCIsImlhdCI6MTY1NDQxMDMwOSwiZXhwIjoxNjU1MDE1MTA5fQ.dqF3ezdzEBg_uM657CVfLljAYMS0TRdpKVlOAPdLHzs",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://obscure-atoll-16302.herokuapp.com/users/users",
+					"protocol": "https",
+					"host": [
+						"obscure-atoll-16302",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"users",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "取得個人資料",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyOWM0YzFjYmZmZjZiMTY5ZmQyZDM4OCIsImlhdCI6MTY1NDQxMDMwOSwiZXhwIjoxNjU1MDE1MTA5fQ.dqF3ezdzEBg_uM657CVfLljAYMS0TRdpKVlOAPdLHzs",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://obscure-atoll-16302.herokuapp.com/users/user",
+					"protocol": "https",
+					"host": [
+						"obscure-atoll-16302",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"users",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "更新個人資料",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyOWM0YzFjYmZmZjZiMTY5ZmQyZDM4OCIsImlhdCI6MTY1NDQxMDMwOSwiZXhwIjoxNjU1MDE1MTA5fQ.dqF3ezdzEBg_uM657CVfLljAYMS0TRdpKVlOAPdLHzs",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"小花\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://obscure-atoll-16302.herokuapp.com/users/user/629c4c1cbfff6b169fd2d388/edit",
+					"protocol": "https",
+					"host": [
+						"obscure-atoll-16302",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"users",
+						"user",
+						"629c4c1cbfff6b169fd2d388",
+						"edit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "更新使用者密碼",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyOWM0YzFjYmZmZjZiMTY5ZmQyZDM4OCIsImlhdCI6MTY1NDQxMDMwOSwiZXhwIjoxNjU1MDE1MTA5fQ.dqF3ezdzEBg_uM657CVfLljAYMS0TRdpKVlOAPdLHzs",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"password\": \"qazwsxed123\",\n    \"confirmPassword\": \"qazwsxed123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://obscure-atoll-16302.herokuapp.com/users/user/629c4c1cbfff6b169fd2d388/updatePassword",
+					"protocol": "https",
+					"host": [
+						"obscure-atoll-16302",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"users",
+						"user",
+						"629c4c1cbfff6b169fd2d388",
+						"updatePassword"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "新增圖片",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyOWM0YzFjYmZmZjZiMTY5ZmQyZDM4OCIsImlhdCI6MTY1NDQxMDMwOSwiZXhwIjoxNjU1MDE1MTA5fQ.dqF3ezdzEBg_uM657CVfLljAYMS0TRdpKVlOAPdLHzs",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "",
+							"type": "file",
+							"src": "/Users/joyunhsiao/Desktop/截圖 2022-06-06 下午11.17.46.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://obscure-atoll-16302.herokuapp.com/upload",
+					"protocol": "https",
+					"host": [
+						"obscure-atoll-16302",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"upload"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
